@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login-page.css">
+</head>
+<body>
+        <div class="login-container">
+            <div class="logo">
+                <!-- Instagram logo or your custom logo -->
+                <img src="/project-main-data/Amartlogo.png" alt="Instagram">
+            </div>
+            <div class="form-container">
+                <form action="login.php" method="post">
+                    <input type="text" name="username" placeholder="Email address or phone number" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Log In</button>
+                </form>
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+            <div class="signup-link">
+                Don't have an account? <a href="/sign-in-page.html">Sign up</a>
+            </div>
+        </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var errorElement = document.getElementById('error');
+
+            // Perform validation or send data to server
+            if (username === "admin" && password === "password") {
+                alert('Login successful!');
+                errorElement.textContent = '';
+            } else {
+                errorElement.textContent = "Invalid username or password.";
+            }
+        });
+    </script>
+</body>
+</html>

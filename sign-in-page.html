@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="sign-in-page.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="logo">
+            <!-- Instagram logo or your custom logo -->
+            <img src="/project-main-data/Amartlogo.png" alt="Instagram">
+        </div>
+        <h2>Crete a new account</h2>
+        <form id="signupForm">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="date" id="dob" name="dob" placeholder="Date of Birth" required>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+            <p class="error" id="error"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var dob = document.getElementById('dob').value;
+            var gender = document.getElementById('gender').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var errorElement = document.getElementById('error');
+
+            if (password !== confirmPassword) {
+                errorElement.textContent = "Passwords do not match.";
+                return;
+            }
+
+            // Perform further validation or send data to server
+            alert('Form submitted successfully!');
+            errorElement.textContent = '';
+        });
+    </script>
+</body>
+</html>
